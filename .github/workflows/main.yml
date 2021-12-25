@@ -25,7 +25,7 @@ jobs:
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN }}
         TARGET_REPO: h2ys/h2ys.github.io
         TARGET_BRANCH: pages
         BUILD_SCRIPT: yarn && yarn docs:build
