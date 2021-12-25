@@ -23,4 +23,6 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: docs:build
-      run: yarn docs:build
+      run: |
+        yarn install
+        yarn docs:build
