@@ -1,0 +1,17 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: vuepress-deploy
+      uses: h2ys/h2ys.github.io@main
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_REPO: h2ys.github.io/repo
+        TARGET_BRANCH: pages
+        BUILD_SCRIPT: yarn && yarn build docs:build
+        BUILD_DIR: docs/.vuepress/dist
