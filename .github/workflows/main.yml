@@ -33,7 +33,7 @@ jobs:
         git init
         git config --global user.email "maya0301@naver.com"
         git config --global user.name "h2y"
-        git remote add origin git@github.com:h2ys:&{{secrets.PAGES_TOKEN}}/h2ys.github.io.git
+        git remote add origin git@github.com:h2ys:${{secrets.PAGES_TOKEN}}/h2ys.github.io.git
         git checkout -b pages
         git add -A
         git commit -m 'deploy'
