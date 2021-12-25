@@ -22,22 +22,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: docs:build
-      run: |
-        yarn install
-        yarn docs:build
-        
-    - name: docs:publish
-      run: |
-        cd docs/.vuepress/dist
-        git init
-        git config --global user.email "maya0301@naver.com"
-        git config --global user.name "h2y"
-        git remote add origin git@github.com:h2ys/h2ys.github.io.git
-        git checkout -b pages
-        git add -A
-        git commit -m 'deploy'
-        git push -u origin pages
-      env: 
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_REPO: h2ys/h2ys.github.io
+        TARGET_BRANCH: pages
+        BUILD_SCRIPT: yarn && yarn docs:build
+        BUILD_DIR: docs/.vuepress/dist/
       
