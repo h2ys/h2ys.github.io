@@ -26,3 +26,12 @@ jobs:
       run: |
         yarn install
         yarn docs:build
+        
+    - name: docs:publish
+      run: |
+        cd docs/.vuepress/dist
+        git init
+        git add -A
+        git commit -m 'deploy'
+        git push -f git@github.com:h2ys/h2ys.github.io.git pages
+              
