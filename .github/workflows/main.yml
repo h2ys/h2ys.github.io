@@ -36,6 +36,5 @@ jobs:
         git config --global user.email "maya0301@naver.com"
         git config --global user.name "h2y"
         git commit -m 'deploy'
-        git push
-        
-        git push -f git@github.com:h2ys/h2ys.github.io.git pages
+        git remote add origin git@github.com:h2ys/h2ys.github.io.git
+        git push origin pages
