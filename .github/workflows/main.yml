@@ -31,10 +31,9 @@ jobs:
       run: |
         cd docs/.vuepress/dist
         git init
-        git branch -m pages
-        git add -A
         git config --global user.email "maya0301@naver.com"
         git config --global user.name "h2y"
-        git commit -m 'deploy'
         git remote add origin git@github.com:h2ys/h2ys.github.io.git
+        git add -A
+        git commit -m 'deploy'
         git push origin pages
