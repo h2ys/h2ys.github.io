@@ -1,0 +1,14 @@
+{
+  "name": "githubio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs --port 8000",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "h2y <h2y@h2y.co.kr>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.4"
+  }
+}
